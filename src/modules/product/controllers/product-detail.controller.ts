@@ -1,26 +1,26 @@
 import { Controller, Get, Post, Body, Param, Delete, Put, ParseIntPipe } from '@nestjs/common';
-import { CreateProductDto, UpdateProductDto } from '../dto/product.dto';
+import { AddDetailDto, UpdateDetailDto } from '../dto/detail.dto';
 import { ApiConsumes, ApiTags } from '@nestjs/swagger';
 import { SwaggerConsumes } from 'src/common/enums/swagger-consumes';
 import { ProductService } from '../services/product.service';
 
-@Controller('product')
-@ApiTags("Product")
-export class ProductController {
+@Controller('product-Detail')
+@ApiTags("Product-Detail")
+export class ProductDetailController {
   constructor(private readonly productService: ProductService) { }
 
   @Post()
   @ApiConsumes(SwaggerConsumes.UrlEncoded)
-  create(@Body() productDto: CreateProductDto) { }
+  create(@Body() detailDto: AddDetailDto) { }
 
   @Get()
-  findAll(@Body() productDto: CreateProductDto) { }
+  findAll(@Body() detailDto: AddDetailDto) { }
 
   @Put(':id')
   @ApiConsumes(SwaggerConsumes.UrlEncoded)
   update(
     @Param('id', ParseIntPipe) id: number,
-    @Body() productDto: UpdateProductDto
+    @Body() detailDto: UpdateDetailDto
   ) { }
 
   @Delete(':id')

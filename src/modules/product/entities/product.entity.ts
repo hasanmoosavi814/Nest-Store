@@ -4,6 +4,7 @@ import { ProductColor } from "./product-color.entity";
 import { ProductSize } from "./product-size.entity";
 import { EntityName } from "src/common/enums/entity.enum";
 import { BaseEntity } from "src/common/abstarct/base-entity";
+import { ProductType } from "../enum/type.enum";
 
 @Entity(EntityName.Product)
 export class Product extends BaseEntity {
@@ -18,6 +19,9 @@ export class Product extends BaseEntity {
 
   @Column()
   code: string;
+
+  @Column({ type: 'enum', enum: ProductType })
+  type: string;
 
   @Column({ default: 0 })
   count: number;
