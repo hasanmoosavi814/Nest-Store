@@ -6,7 +6,12 @@ import { AppModule } from './modules/app/app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   swaggerConfigInit(app)
-  app.useGlobalPipes(new ValidationPipe())
+  app.useGlobalPipes(
+    new ValidationPipe({
+      transform: true,
+      whitelist: true,
+    }),
+  );
 
   const { PORT = 3000 } = process.env;
   await app.listen(PORT);

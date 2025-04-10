@@ -7,22 +7,35 @@ import { ProductService } from '../services/product.service';
 @Controller('product')
 @ApiTags("Product")
 export class ProductController {
-  constructor(private readonly productService: ProductService) { }
+  constructor(private productService: ProductService) { }
 
   @Post()
   @ApiConsumes(SwaggerConsumes.UrlEncoded)
-  create(@Body() productDto: CreateProductDto) { }
+  create(@Body() productDto: CreateProductDto) {
+    return this.productService.create(productDto)
+  }
 
   @Get()
-  findAll(@Body() productDto: CreateProductDto) { }
+  findAll() {
+    return this.productService.findAll()
+  }
+
+  @Get(":id")
+  findOne(@Param('id', ParseIntPipe) id: number) {
+    return this.productService.findOne(id)
+  }
 
   @Put(':id')
   @ApiConsumes(SwaggerConsumes.UrlEncoded)
   update(
     @Param('id', ParseIntPipe) id: number,
     @Body() productDto: UpdateProductDto
-  ) { }
+  ) {
+    return this.productService.update(id, productDto)
+  }
 
   @Delete(':id')
-  delete(@Param('id', ParseIntPipe) id: number) { }
+  delete(@Param('id', ParseIntPipe) id: number) {
+    return this.productService.delete(id)
+  }
 }
