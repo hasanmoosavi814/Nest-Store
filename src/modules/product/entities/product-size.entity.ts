@@ -1,5 +1,5 @@
 import { Column, Entity, ManyToOne } from "typeorm";
-import { BaseEntity } from "src/common/abstarct/base-entity";
+import { BaseEntity } from "src/common/abstract/base-entity";
 import { EntityName } from "src/common/enums/entity.enum";
 import { Product } from "./product.entity";
 

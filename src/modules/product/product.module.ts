@@ -4,7 +4,7 @@ import { ProductSizeController } from './controllers/product-size.controller';
 import { ProductController } from './controllers/product.controller';
 import { ProductService } from './services/product.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ProductDetail } from './entities/product-detail.entoty';
+import { ProductDetail } from './entities/product-detail.entity';
 import { ProductColor } from './entities/product-color.entity';
 import { ProductSize } from './entities/product-size.entity';
 import { Product } from './entities/product.entity';

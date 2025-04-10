@@ -1,10 +1,10 @@
 import { Column, CreateDateColumn, Entity, OneToMany } from "typeorm";
-import { ProductDetail } from "./product-detail.entoty";
+import { ProductDetail } from "./product-detail.entity";
 import { ProductColor } from "./product-color.entity";
 import { ProductSize } from "./product-size.entity";
-import { EntityName } from "src/common/enums/entity.enum";
-import { BaseEntity } from "src/common/abstarct/base-entity";
 import { ProductType } from "../enum/type.enum";
+import { EntityName } from "src/common/enums/entity.enum";
+import { BaseEntity } from "src/common/abstract/base-entity";
 
 @Entity(EntityName.Product)
 export class Product extends BaseEntity {
