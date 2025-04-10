@@ -1,4 +1,8 @@
 import { TypeOrmModuleOptions } from "@nestjs/typeorm"
+import { ProductColor } from "src/modules/product/entities/product-color.entity"
+import { ProductDetail } from "src/modules/product/entities/product-detail.entoty"
+import { ProductSize } from "src/modules/product/entities/product-size.entity"
+import { Product } from "src/modules/product/entities/product.entity"
 
 
 export function TypeOrmConfig(): TypeOrmModuleOptions {
@@ -12,6 +16,11 @@ export function TypeOrmConfig(): TypeOrmModuleOptions {
     database: DB_NAME,
     autoLoadEntities: false,
     synchronize: true,
-    entities: ['']
+    entities: [
+      Product,
+      ProductSize,
+      ProductColor,
+      ProductDetail,
+    ]
   }
 }

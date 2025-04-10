@@ -1,4 +1,8 @@
 export enum EntityName {
+  Otp = "otp",
   User = "user",
-  Otp = "otp"
+  Product = "Product",
+  ProductSize = "Product_size",
+  ProductColor = "Product_color",
+  ProductDetail = "Product_detail",
 }
